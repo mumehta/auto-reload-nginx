@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+  nginx-auto-reload:
+    build: .
+    container_name: nginx-auto-reload
+    ports:
+      - 8080:80
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d:ro
+      - ./site:/usr/share/nginx/html
+      - ./logs:/var/log/nginx
